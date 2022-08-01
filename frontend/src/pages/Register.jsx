@@ -42,8 +42,27 @@ function Register() {
     }));
   };
 
+  const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
+
+    if (!name) {
+      return toast.error('Please enter name');
+    }
+
+    if (!validateEmail(email)) {
+      return toast.error('Please enter a valid email');
+    }
+    if (password.length < 8) {
+      return toast.error('Your password must contain at least 8 characters');
+    }
 
     if (password !== password2) {
       toast.error('Passwords do not match');

@@ -70,13 +70,13 @@ export const getEntry = createAsyncThunk(
   }
 );
 
-// Close entry
-export const closeEntry = createAsyncThunk(
-  'entries/close',
+// Delete entry
+export const deleteEntry = createAsyncThunk(
+  'entries/delete',
   async (entryId, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token;
-      return await entryService.closeEntry(entryId, token);
+      return await entryService.deleteEntry(entryId, token);
     } catch (error) {
       const message =
         (error.response &&
@@ -136,10 +136,10 @@ export const entrySlice = createSlice({
         state.isError = true;
         state.message = action.payload;
       })
-      .addCase(closeEntry.fulfilled, (state, action) => {
+      .addCase(deleteEntry.fulfilled, (state, action) => {
         state.isLoading = false;
         state.entries.map((entry) =>
-          entry._id === action.payload._id ? (entry.status = 'closed') : entry
+          entry._id === action.payload._id ? (entry.status = 'deleted') : entry
         );
       });
   },

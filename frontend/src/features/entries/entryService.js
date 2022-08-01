@@ -41,8 +41,8 @@ const getEntry = async (entryId, token) => {
   return response.data;
 };
 
-// Close entry
-const closeEntry = async (entryId, token) => {
+// Delete entry
+const deleteEntry = async (entryId, token) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -51,7 +51,7 @@ const closeEntry = async (entryId, token) => {
 
   const response = await axios.put(
     API_URL + entryId,
-    { status: 'closed' },
+    { status: 'deleted' },
     config
   );
 
@@ -62,7 +62,7 @@ const entryService = {
   createEntry,
   getEntries,
   getEntry,
-  closeEntry,
+  deleteEntry,
 };
 
 export default entryService;

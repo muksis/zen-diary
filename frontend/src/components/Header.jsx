@@ -1,5 +1,4 @@
-import { FaSignInAlt, FaSignOutAlt, FaUser } from 'react-icons/fa';
-import { FiSun } from 'react-icons/fi';
+import { BsSun } from 'react-icons/bs';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout, reset } from '../features/auth/authSlice';
@@ -20,7 +19,7 @@ function Header() {
       <header className='header'>
         <div className='logo'>
           <Link to='/'>
-            <FiSun /> Zen Diary
+            <BsSun /> Zen Diary
           </Link>
         </div>
         <ul>

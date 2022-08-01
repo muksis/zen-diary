@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { getEntry, closeEntry } from '../features/entries/entrySlice';
+import { getEntry, deleteEntry } from '../features/entries/entrySlice';
 import BackButton from '../components/BackButton';
 
 function Entry() {
@@ -25,8 +25,8 @@ function Entry() {
   }, [isError, message, entryId]);
 
   // Delete entry
-  const onEntryClose = () => {
-    dispatch(closeEntry(entryId));
+  const onEntryDelete = () => {
+    dispatch(deleteEntry(entryId));
     toast.success('Entry deleted');
     navigate('/entries');
   };
@@ -51,8 +51,8 @@ function Entry() {
         </div>
       </header>
 
-      {entry.status !== 'closed' && (
-        <button onClick={onEntryClose} className='btn btn-block btn-danger'>
+      {entry.status !== 'deleted' && (
+        <button onClick={onEntryDelete} className='btn btn-block btn-danger'>
           Delete Entry
         </button>
       )}
