@@ -22,7 +22,7 @@ function Login() {
 
   useEffect(() => {
     if (isError) {
-      toast.error(message);
+      toast.error('Bad user credentials');
     }
 
     // Redirect when logged in
@@ -73,7 +73,6 @@ function Login() {
               value={email}
               onChange={onChange}
               placeholder='Enter your email'
-              required
             />
           </div>
           <div className='form-group'>
@@ -85,7 +84,6 @@ function Login() {
               value={password}
               onChange={onChange}
               placeholder='Enter password'
-              required
             />
           </div>
           <div className='form-group'>

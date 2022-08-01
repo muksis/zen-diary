@@ -65,7 +65,7 @@ function Register() {
     }
 
     if (password !== password2) {
-      toast.error('Passwords do not match');
+      return toast.error('Passwords do not match');
     } else {
       const userData = {
         name,
@@ -99,7 +99,6 @@ function Register() {
               value={name}
               onChange={onChange}
               placeholder='Enter your name'
-              required
             />
           </div>
           <div className='form-group'>
@@ -111,7 +110,6 @@ function Register() {
               value={email}
               onChange={onChange}
               placeholder='Enter your email'
-              required
             />
           </div>
           <div className='form-group'>
@@ -123,7 +121,6 @@ function Register() {
               value={password}
               onChange={onChange}
               placeholder='Enter password'
-              required
             />
           </div>
           <div className='form-group'>
@@ -135,7 +132,6 @@ function Register() {
               value={password2}
               onChange={onChange}
               placeholder='Confirm password'
-              required
             />
           </div>
           <div className='form-group'>
