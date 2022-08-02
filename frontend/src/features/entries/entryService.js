@@ -48,12 +48,7 @@ const deleteEntry = async (entryId, token) => {
       Authorization: `Bearer ${token}`,
     },
   };
-
-  const response = await axios.put(
-    API_URL + entryId,
-    { status: 'deleted' },
-    config
-  );
+  const response = await axios.delete(API_URL + entryId, config);
 
   return response.data;
 };

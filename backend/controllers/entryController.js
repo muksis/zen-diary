@@ -71,7 +71,6 @@ const createEntry = asyncHandler(async (req, res) => {
     title,
     text,
     user: req.user.id,
-    status: 'new',
   });
 
   res.status(201).json(entry);
@@ -89,7 +88,7 @@ const deleteEntry = asyncHandler(async (req, res) => {
     throw new Error('User not found');
   }
 
-  const entry = await Entry.findById(req.params.id);
+  const entry = await Entry.findByIdAndDelete(req.params.id);
 
   if (!entry) {
     res.status(404);
@@ -101,7 +100,7 @@ const deleteEntry = asyncHandler(async (req, res) => {
     throw new Error('Not authorized');
   }
 
-  await entry.remove();
+  // await entry.remove();
 
   res.status(200).json({ success: true });
 });

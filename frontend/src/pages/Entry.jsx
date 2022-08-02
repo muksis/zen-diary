@@ -6,18 +6,15 @@ import { getEntry, deleteEntry } from '../features/entries/entrySlice';
 import BackButton from '../components/BackButton';
 
 function Entry() {
-  const { entry, isLoading, isSuccess, isError, message } = useSelector(
-    (state) => state.entries
-  );
+  const { entry, isError, message } = useSelector((state) => state.entries);
 
-  const params = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { entryId } = useParams();
 
   useEffect(() => {
     if (isError) {
-      toast.error(message);
+      toast.error('Something went wrong');
     }
 
     dispatch(getEntry(entryId));
@@ -51,11 +48,9 @@ function Entry() {
         </div>
       </header>
 
-      {entry.status !== 'deleted' && (
-        <button onClick={onEntryDelete} className='btn btn-block btn-danger'>
-          Delete Entry
-        </button>
-      )}
+      <button onClick={onEntryDelete} className='btn btn-block btn-danger'>
+        Delete Entry
+      </button>
     </div>
   );
 }
