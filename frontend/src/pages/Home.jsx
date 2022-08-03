@@ -9,7 +9,7 @@ function Home() {
       </section>
 
       <Link to='/new-entry' className='btn btn-reverse btn-block'>
-        New Entry
+        Add a New Entry
       </Link>
       <Link to='/entries' className='btn btn-block'>
         View My Entries

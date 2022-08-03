@@ -80,6 +80,7 @@ function NewEntry() {
               id='text'
               className='form-control'
               placeholder='Share your thoughts'
+              rows='15'
               value={text}
               onChange={(e) => setText(e.target.value)}
             ></textarea>
