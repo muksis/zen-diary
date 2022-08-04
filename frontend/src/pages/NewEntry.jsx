@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { WiDaySunny } from 'react-icons/wi';
 import { createEntry, reset } from '../features/entries/entrySlice';
 import Spinner from '../components/Spinner';
 import BackButton from '../components/BackButton';
@@ -58,7 +59,10 @@ function NewEntry() {
               value={mood}
               onChange={(e) => setMood(e.target.value)}
             >
-              <option value='Good'>Good</option>
+              <option value='Good' icon={<WiDaySunny />}>
+                Good
+              </option>
+              <option value='Neutral'>Neutral</option>
               <option value='NotSoGood'>Not so good</option>
             </select>
           </div>

@@ -5,7 +5,7 @@ function EntryItem({ entry }) {
     <div className='entry'>
       <div>{new Date(entry.createdAt).toLocaleString('en-US')}</div>
       <div>{entry.title}</div>
-      <div>{entry.mood}</div>
+      <div>{entry.mood === 'NotSoGood' ? 'Not so good' : entry.mood}</div>
       <Link to={`/entry/${entry._id}`} className='btn btn-reverse btn-sm'>
         View
       </Link>

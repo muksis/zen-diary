@@ -10,7 +10,7 @@ const entrySchema = mongoose.Schema(
     mood: {
       type: String,
       required: [true, 'Please select the mood'],
-      enum: ['Good', 'Not so good'],
+      enum: ['Good', 'Neutral', 'NotSoGood'],
     },
     title: {
       type: String,

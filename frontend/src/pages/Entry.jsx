@@ -39,7 +39,7 @@ function Entry() {
         <h3>
           Date of the entry: {new Date(entry.createdAt).toLocaleString('en-US')}
         </h3>
-        <h3>Mood: {entry.mood}</h3>
+        <h3>Mood: {entry.mood === 'NotSoGood' ? 'Not so good' : entry.mood}</h3>
         <h3>Title: {entry.title}</h3>
         <hr />
         <div className='entry-desc'>
