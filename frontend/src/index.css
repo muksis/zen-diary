@@ -58,6 +58,11 @@ textarea:focus {
   margin-bottom: 60px;
 }
 
+.headerActive {
+  font-weight: bold;
+  text-decoration: underline #daa520;
+}
+
 .header ul {
   display: flex;
   align-items: center;

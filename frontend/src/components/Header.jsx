@@ -1,5 +1,5 @@
 import { BsSun } from 'react-icons/bs';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout, reset } from '../features/auth/authSlice';
 
@@ -7,6 +7,14 @@ function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
+
+  const location = useLocation();
+
+  const pathMatchRoute = (route) => {
+    if (route === location.pathname) {
+      return true;
+    }
+  };
 
   const onLogout = () => {
     dispatch(logout());
@@ -32,10 +40,20 @@ function Header() {
           ) : (
             <>
               <li>
-                <Link to='/login'>Login</Link>
+                <Link
+                  to='/login'
+                  className={pathMatchRoute('/login') && 'headerActive'}
+                >
+                  Login
+                </Link>
               </li>
               <li>
-                <Link to='/register'>Register</Link>
+                <Link
+                  to='/register'
+                  className={pathMatchRoute('/register') && 'headerActive'}
+                >
+                  Register
+                </Link>
               </li>
             </>
           )}
