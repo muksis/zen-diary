@@ -35,6 +35,12 @@ h3 {
   margin-bottom: 10px;
 }
 
+select,
+input,
+textarea:focus {
+  outline: none !important;
+}
+
 .container {
   width: 100%;
   max-width: 960px;
