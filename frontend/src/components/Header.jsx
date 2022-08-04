@@ -1,4 +1,4 @@
-import { BsSun } from 'react-icons/bs';
+import { CgSun } from 'react-icons/cg';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout, reset } from '../features/auth/authSlice';
@@ -27,7 +27,7 @@ function Header() {
       <header className='header'>
         <div className='logo'>
           <Link to='/'>
-            <BsSun /> Zen Diary
+            <CgSun /> Zen Diary
           </Link>
         </div>
         <ul>
