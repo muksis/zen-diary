@@ -1,7 +1,7 @@
 # Zen Diary
 
 ## Description
-A private journal project built with React JS (including Router, Redux, Thunk, Icons, and Toastify), CSS, MongoDB, and hosted on .
+A private journal project built with React JS (including Router, Redux, Thunk, Icons, and Toastify), CSS, MongoDB and hosted on .
 
 * A user can register and log in using JWT authentication.
 * A user can add diary entries, view them separately or as a list, and delete any entry.
