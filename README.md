@@ -7,4 +7,4 @@ A private journal project built with React JS (including Router, Redux, Thunk, I
 * A user can add diary entries, view them separately or as a list, and delete any entry.
 
 ## How to run
-In the project directory, you can run 'npm run dev’ and open [http://localhost:3000](http://localhost:3000) to view it in your browser or just click [here](https://zen-diary.mariia.io).
+In the project directory, you can run 'npm run dev’ and open [http://localhost:3000](http://localhost:3000) to view it in your browser or just click [here](https://zen-diary.herokuapp.com).
